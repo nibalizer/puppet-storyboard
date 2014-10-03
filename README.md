@@ -206,3 +206,22 @@ File content format:
       email: your_email@some_email_host.com
     - openid: https://login.launchpad.net/+id/some_other_id
       email: admin_email@some_email_host.com
+
+Beaker-Rspec
+------------
+
+This module has beaker-rspec tests
+
+To run(under vagrant):
+
+```shell
+bundle install
+BEAKER_set=precise_vagrant bundle exec rspec spec/acceptance
+
+See https://github.com/puppetlabs/beaker/wiki/Creating-A-Test-Environment for other ways beaker can spin up nodes.
+
+A combination of:
+https://github.com/puppetlabs/puppetlabs-java/blob/master/spec/acceptance/nodesets/centos-6-vcloud.yml
+https://github.com/puppetlabs/beaker/blob/master/lib/beaker/hypervisor/openstack.rb
+
+Should yeild openstackable beaker tests.

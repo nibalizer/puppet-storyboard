@@ -17,9 +17,9 @@ RSpec.configure do |c|
   # Configure all nodes in nodeset
   c.before :suite do
     # Install module
-    puppet_module_install(:source => proj_root, :module_name => 'nova')
+    puppet_module_install(:source => proj_root, :module_name => 'storyboard')
     hosts.each do |host|
-      on host, puppet('module','install','puppetlabs-mysql', '--version', '2.2'), { :acceptable_exit_codes => [0,1] }
+      on host, puppet('module','install','puppetlabs-mysql', '--version', '0.6.1'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppetlabs-apache', '--version', '0.0.4'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppetlabs-rabbitmq', '--version', '4.0.0'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppetlabs-puppi', '--version', '2.1.9'), { :acceptable_exit_codes => [0,1] }
